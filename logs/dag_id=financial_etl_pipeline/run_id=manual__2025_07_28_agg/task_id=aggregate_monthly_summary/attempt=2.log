@@ -1,0 +1,67 @@
+[2025-07-28T18:47:03.308+0000] {executor_loader.py:235} INFO - Loaded executor: LocalExecutor
+[2025-07-28T18:47:03.741+0000] {logging_mixin.py:188} INFO - Sending to executor.
+[2025-07-28T18:47:03.744+0000] {base_executor.py:149} INFO - Adding to queue: ['***', 'tasks', 'run', 'financial_etl_pipeline', 'aggregate_monthly_summary', 'manual__2025_07_28_agg', '--local', '--pool', 'default_pool', '--subdir', 'DAGS_FOLDER/financial_etl_dag.py']
+[2025-07-28T18:47:03.750+0000] {local_executor.py:403} INFO - Shutting down LocalExecutor; waiting for running tasks to finish.  Signal again if you don't want to wait.
+[2025-07-28T18:47:03.750+0000] {local_executor.py:90} INFO - QueuedLocalWorker running ['***', 'tasks', 'run', 'financial_etl_pipeline', 'aggregate_monthly_summary', 'manual__2025_07_28_agg', '--local', '--pool', 'default_pool', '--subdir', 'DAGS_FOLDER/financial_etl_dag.py']
+[2025-07-28T18:47:03.776+0000] {logging_mixin.py:188} WARNING - /home/***/.local/lib/python3.12/site-packages/***/executors/local_executor.py:110 DeprecationWarning: This process (pid=502) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2025-07-28T18:47:03.795+0000] {dagbag.py:540} INFO - Filling up the DagBag from /opt/***/dags/financial_etl_dag.py
+[2025-07-28T18:47:04.066+0000] {task_command.py:426} INFO - Running <TaskInstance: financial_etl_pipeline.aggregate_monthly_summary manual__2025_07_28_agg [failed]> on host 502279ba8596
+[2025-07-28T18:47:04.198+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2025-07-28T18:47:04.255+0000] {taskinstance.py:2063} INFO - Dependencies not met for <TaskInstance: financial_etl_pipeline.aggregate_monthly_summary manual__2025_07_28_agg [failed]>, dependency 'Task Instance State' FAILED: Task is in the 'failed' state.
+[2025-07-28T18:47:04.258+0000] {local_task_job_runner.py:163} INFO - Task is not able to be run
+[2025-07-28T19:17:25.432+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2025-07-28T19:17:25.458+0000] {taskinstance.py:2063} INFO - Dependencies not met for <TaskInstance: financial_etl_pipeline.aggregate_monthly_summary manual__2025_07_28_agg [failed]>, dependency 'Task Instance State' FAILED: Task is in the 'failed' state.
+[2025-07-28T19:17:25.467+0000] {local_task_job_runner.py:163} INFO - Task is not able to be run
+[2025-07-28T19:26:18.386+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2025-07-28T19:26:18.421+0000] {taskinstance.py:2063} INFO - Dependencies not met for <TaskInstance: financial_etl_pipeline.aggregate_monthly_summary manual__2025_07_28_agg [failed]>, dependency 'Task Instance State' FAILED: Task is in the 'failed' state.
+[2025-07-28T19:26:18.432+0000] {local_task_job_runner.py:163} INFO - Task is not able to be run
+[2025-07-28T19:27:29.832+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2025-07-28T19:27:29.852+0000] {taskinstance.py:2063} INFO - Dependencies not met for <TaskInstance: financial_etl_pipeline.aggregate_monthly_summary manual__2025_07_28_agg [failed]>, dependency 'Task Instance State' FAILED: Task is in the 'failed' state.
+[2025-07-28T19:27:29.854+0000] {local_task_job_runner.py:163} INFO - Task is not able to be run
+[2025-07-28T19:29:25.207+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2025-07-28T19:29:25.226+0000] {taskinstance.py:2063} INFO - Dependencies not met for <TaskInstance: financial_etl_pipeline.aggregate_monthly_summary manual__2025_07_28_agg [failed]>, dependency 'Task Instance State' FAILED: Task is in the 'failed' state.
+[2025-07-28T19:29:25.234+0000] {local_task_job_runner.py:163} INFO - Task is not able to be run
+[2025-07-28T19:30:35.325+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2025-07-28T19:30:35.407+0000] {taskinstance.py:2073} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: financial_etl_pipeline.aggregate_monthly_summary manual__2025_07_28_agg [queued]>
+[2025-07-28T19:30:35.426+0000] {taskinstance.py:2073} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: financial_etl_pipeline.aggregate_monthly_summary manual__2025_07_28_agg [queued]>
+[2025-07-28T19:30:35.427+0000] {taskinstance.py:2303} INFO - Starting attempt 2 of 2
+[2025-07-28T19:30:36.714+0000] {taskinstance.py:2327} INFO - Executing <Task(PythonOperator): aggregate_monthly_summary> on 2025-07-28 18:46:50+00:00
+[2025-07-28T19:30:36.726+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'financial_etl_pipeline', 'aggregate_monthly_summary', 'manual__2025_07_28_agg', '--job-id', '178', '--raw', '--subdir', 'DAGS_FOLDER/financial_etl_dag.py', '--cfg-path', '/tmp/tmpz0fa4tds']
+[2025-07-28T19:30:36.730+0000] {standard_task_runner.py:91} INFO - Job 178: Subtask aggregate_monthly_summary
+[2025-07-28T19:30:36.731+0000] {logging_mixin.py:188} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61 DeprecationWarning: This process (pid=2324) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2025-07-28T19:30:36.734+0000] {standard_task_runner.py:63} INFO - Started process 2328 to run task
+[2025-07-28T19:30:36.829+0000] {task_command.py:426} INFO - Running <TaskInstance: financial_etl_pipeline.aggregate_monthly_summary manual__2025_07_28_agg [running]> on host 7815b21b8845
+[2025-07-28T19:30:38.444+0000] {taskinstance.py:2644} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='financial_etl_pipeline' AIRFLOW_CTX_TASK_ID='aggregate_monthly_summary' AIRFLOW_CTX_EXECUTION_DATE='2025-07-28T18:46:50+00:00' AIRFLOW_CTX_TRY_NUMBER='2' AIRFLOW_CTX_DAG_RUN_ID='manual__2025_07_28_agg'
+[2025-07-28T19:30:38.446+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2025-07-28T19:30:38.475+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2025-07-28T19:30:38.477+0000] {taskinstance.py:2890} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 465, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 432, in _execute_callable
+    return execute_callable(context=context, **execute_callable_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py", line 400, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/python.py", line 235, in execute
+    return_value = self.execute_callable()
+                   ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/python.py", line 252, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/airflow/dags/financial_etl_dag.py", line 67, in aggregate_monthly_summary
+    cursor.execute("""
+psycopg2.errors.UndefinedTable: relation "monthly_summary" does not exist
+LINE 2:         INSERT INTO monthly_summary (month, merchant, total_...
+                            ^
+
+[2025-07-28T19:30:38.495+0000] {taskinstance.py:1205} INFO - Marking task as FAILED. dag_id=financial_etl_pipeline, task_id=aggregate_monthly_summary, execution_date=20250728T184650, start_date=20250728T193035, end_date=20250728T193038
+[2025-07-28T19:30:38.543+0000] {standard_task_runner.py:110} ERROR - Failed to execute job 178 for task aggregate_monthly_summary (relation "monthly_summary" does not exist
+LINE 2:         INSERT INTO monthly_summary (month, merchant, total_...
+                            ^
+; 2328)
+[2025-07-28T19:30:38.573+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 1
+[2025-07-28T19:30:38.594+0000] {taskinstance.py:3482} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2025-07-28T19:30:38.599+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

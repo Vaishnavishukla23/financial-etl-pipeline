@@ -1,0 +1,4 @@
+transaction_id,user_id,amount,currency,timestamp,merchant,fraud_flag
+1,101,250.75,USD,2025-07-27 17:34:45.984881,Amazon,False
+2,102,125.0,EUR,2025-07-27 17:34:45.984899,Flipkart,True
+3,103,320.4,USD,2025-07-27 17:34:45.984900,Apple,False

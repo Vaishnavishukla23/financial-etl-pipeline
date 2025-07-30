@@ -1,0 +1,56 @@
+[2025-07-30T10:53:41.463+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2025-07-30T10:53:41.524+0000] {taskinstance.py:2073} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: financial_etl_pipeline.ingest_data manual__2025-07-30T10:53:38+00:00 [queued]>
+[2025-07-30T10:53:41.541+0000] {taskinstance.py:2073} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: financial_etl_pipeline.ingest_data manual__2025-07-30T10:53:38+00:00 [queued]>
+[2025-07-30T10:53:41.542+0000] {taskinstance.py:2303} INFO - Starting attempt 1 of 1
+[2025-07-30T10:53:41.557+0000] {taskinstance.py:2327} INFO - Executing <Task(PythonOperator): ingest_data> on 2025-07-30 10:53:38+00:00
+[2025-07-30T10:53:41.570+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'financial_etl_pipeline', 'ingest_data', 'manual__2025-07-30T10:53:38+00:00', '--job-id', '225', '--raw', '--subdir', 'DAGS_FOLDER/financial_etl_dag.py', '--cfg-path', '/tmp/tmpgeyahche']
+[2025-07-30T10:53:41.573+0000] {standard_task_runner.py:91} INFO - Job 225: Subtask ingest_data
+[2025-07-30T10:53:41.573+0000] {logging_mixin.py:188} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61 DeprecationWarning: This process (pid=1360) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2025-07-30T10:53:41.574+0000] {standard_task_runner.py:63} INFO - Started process 1382 to run task
+[2025-07-30T10:53:41.683+0000] {task_command.py:426} INFO - Running <TaskInstance: financial_etl_pipeline.ingest_data manual__2025-07-30T10:53:38+00:00 [running]> on host 06b1742b327c
+[2025-07-30T10:53:41.836+0000] {taskinstance.py:2644} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='financial_etl_pipeline' AIRFLOW_CTX_TASK_ID='ingest_data' AIRFLOW_CTX_EXECUTION_DATE='2025-07-30T10:53:38+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-07-30T10:53:38+00:00'
+[2025-07-30T10:53:41.840+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2025-07-30T10:53:41.921+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2025-07-30T10:53:41.922+0000] {taskinstance.py:2890} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/pandas/core/indexes/base.py", line 3791, in get_loc
+    return self._engine.get_loc(casted_key)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "index.pyx", line 152, in pandas._libs.index.IndexEngine.get_loc
+  File "index.pyx", line 181, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas/_libs/hashtable_class_helper.pxi", line 7080, in pandas._libs.hashtable.PyObjectHashTable.get_item
+  File "pandas/_libs/hashtable_class_helper.pxi", line 7088, in pandas._libs.hashtable.PyObjectHashTable.get_item
+KeyError: 'timestamp'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 465, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 432, in _execute_callable
+    return execute_callable(context=context, **execute_callable_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py", line 400, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/python.py", line 235, in execute
+    return_value = self.execute_callable()
+                   ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/python.py", line 252, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/airflow/dags/financial_etl_dag.py", line 22, in ingest_data
+    df['timestamp'] = pd.to_datetime(df['timestamp'])  # Ensure datetime format
+                                     ~~^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/pandas/core/frame.py", line 3893, in __getitem__
+    indexer = self.columns.get_loc(key)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/pandas/core/indexes/base.py", line 3798, in get_loc
+    raise KeyError(key) from err
+KeyError: 'timestamp'
+[2025-07-30T10:53:41.974+0000] {taskinstance.py:1205} INFO - Marking task as FAILED. dag_id=financial_etl_pipeline, task_id=ingest_data, execution_date=20250730T105338, start_date=20250730T105341, end_date=20250730T105341
+[2025-07-30T10:53:41.998+0000] {standard_task_runner.py:110} ERROR - Failed to execute job 225 for task ingest_data ('timestamp'; 1382)
+[2025-07-30T10:53:42.032+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 1
+[2025-07-30T10:53:42.067+0000] {taskinstance.py:3482} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2025-07-30T10:53:42.074+0000] {local_task_job_runner.py:222} INFO - ::endgroup::
